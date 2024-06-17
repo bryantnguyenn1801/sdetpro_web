@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1ab3999-457b-403d-9d76-b1194e307a0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloadFile/chromedriver" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/drivers/WebAppDriverManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagefactory/PageFactoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagesobject/base/AbstractPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagesobject/features/DialogPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagesobject/features/DriverDetailsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagesobject/features/PaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagesobject/features/VehicleDetailsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagesobject/features/VehicleSearchPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CommonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VehicleDetailsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VehicleSearchTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2hsGWOwW9Ualw8BNudmQbzwzRs0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.HomePageTest.executor": "Run",
+    "JUnit.SignUpTest.executor": "Run",
+    "JUnit.VehicleDetailsTest.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG./Users/bryantnguyen1801/Documents/SDETPRO/sdetpro_web/sdetpro_web/src/test/resources/testng.xml.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/bryantnguyen1801/Documents/SDETPRO/sdetpro_web/sdetpro_web",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/downloadFile" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HomePageTest">
+    <configuration name="HomePageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sdetpro_web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.HomePageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sdetpro_web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SignUpTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VehicleDetailsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sdetpro_web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.VehicleDetailsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/Users/bryantnguyen1801/Documents/SDETPRO/sdetpro_web/sdetpro_web/src/test/resources/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sdetpro_web" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HomePageTest" />
+        <item itemvalue="JUnit.VehicleDetailsTest" />
+        <item itemvalue="JUnit.SignUpTest" />
+        <item itemvalue="TestNG./Users/bryantnguyen1801/Documents/SDETPRO/sdetpro_web/sdetpro_web/src/test/resources/testng.xml" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1ab3999-457b-403d-9d76-b1194e307a0b" name="Changes" comment="" />
+      <created>1718375404466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718375404466</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pagesobject/features/DialogPage.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pagesobject/features/DialogPage.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
