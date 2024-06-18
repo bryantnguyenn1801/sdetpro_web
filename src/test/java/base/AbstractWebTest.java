@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
+import static constants.strings.Messages.FAIL_TO_SETUP_WEBDRIVER;
+
 public abstract class AbstractWebTest {
     protected static WebDriver driver;
 
@@ -18,7 +20,7 @@ public abstract class AbstractWebTest {
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Failed to set up WebDriver: " + e.getMessage());
+            throw new RuntimeException(FAIL_TO_SETUP_WEBDRIVER + e.getMessage());
         }
     }
 

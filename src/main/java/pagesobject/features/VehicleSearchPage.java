@@ -2,15 +2,13 @@ package pagesobject.features;
 
 import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import pagesobject.base.AbstractPage;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class VehicleSearchPage extends AbstractPage {
     public static final By hideBackdropBy = By.cssSelector("[data-testid='hideBackdrop']");
@@ -32,6 +30,8 @@ public class VehicleSearchPage extends AbstractPage {
 
     public VehicleSearchPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
+
     }
 
     @Step("Enter search keyword: {keyword}")
@@ -53,7 +53,7 @@ public class VehicleSearchPage extends AbstractPage {
 
     @Step("Get vehicle card by index: {index}")
     public WebElement getVehicleCardByIndex(int index) {
-        String dataTestId = "fleetListingFleetCard_" + index;
+        String dataTestId = "fleetListingFleetCard_" + (index + 1);
         return driver.findElement(By.cssSelector(String.format("[data-testid='%s']", dataTestId)));
     }
 

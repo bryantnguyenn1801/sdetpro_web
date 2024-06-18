@@ -1,13 +1,9 @@
 package utils;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class CommonUtils {
-    private static final String CHAR_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private static final String NUMBER_LIST = "0123456789";
-
     public CommonUtils() {
     }
 

@@ -6,29 +6,40 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pagesobject.base.AbstractPage;
 
-import java.time.Duration;
 import java.util.List;
 
-public class HomePage extends AbstractPage {
+import static constants.strings.StringConstants.*;
+import static utils.WaitUtils.*;
 
+public class HomePage extends AbstractPage {
     @FindBy(xpath = "//h4[contains(text(),'What’s hot!?')]")
-    private WebElement whatIsHotTab;
+    private WebElement whatIsHotSection;
 
     @FindBy(xpath = "//p[contains(text(),'How Lumi can help you')]")
-    private WebElement howToHelpTab;
+    private WebElement whyLumiTab;
+
+    @FindBy(css = "#why_lumi h4")
+    private WebElement whyLumiSection;
 
     @FindBy(xpath = "//p[contains(text(),'Speedy bookings')]")
     private WebElement speedyBookingsTab;
 
+    @FindBy(css = "#our_step h3:nth-child(1)")
+    private WebElement speedyBookingsSection;
+
     @FindBy(xpath = "//p[contains(text(),'Locations')]")
     private WebElement locationsTab;
 
+    @FindBy(css = "#our_location li:nth-child(1) h4")
+    private WebElement locationsSection;
+
     @FindBy(xpath = "//p[contains(text(),'Our app')]")
     private WebElement ourAppTab;
+
+    @FindBy(xpath = "//h4[contains(text(),'Save time with our app')]")
+    private WebElement ourAppSection;
 
     @FindBy(css = ".slick-slider")
     private WebElement slickSlider;
@@ -54,6 +65,7 @@ public class HomePage extends AbstractPage {
         PageFactory.initElements(driver, this);
 
     }
+
     @Step("Open the Home Page")
     public HomePage open() {
         driver.get("https://staging.lumirental.com/en");
@@ -62,8 +74,8 @@ public class HomePage extends AbstractPage {
 
     @Step("Verify the Home Page is displayed")
     public HomePage isHomePageDisplayed() {
-        String actualMsg = wait.until(ExpectedConditions.visibilityOf(whatIsHotTab)).getText().trim();
-        Assert.assertEquals(actualMsg, "What’s hot!?");
+        String actualMsg = waitForElement(whatIsHotSection).getText().trim();
+        Assert.assertEquals(actualMsg, WHAT_IS_HOT_TAB);
         return this;
     }
 
@@ -76,32 +88,32 @@ public class HomePage extends AbstractPage {
 
     @Step("Select Branch")
     public HomePage selectBranch() {
-        branches.get(1).click();
+        click(branches.get(1));
         return this;
     }
 
     @Step("Click the Search button")
     public HomePage clickSearchButton() {
-        searchButton.click();
+        click(searchButton);
         return this;
     }
 
     @Step("Click the Login button")
     public HomePage clickLoginButton() {
-        waitForVisibility(loginButton);
-        loginButton.click();
+        waitForElement(loginButton);
+        click(loginButton);
         return this;
     }
 
     @Step("Check if 'What’s hot!?' tab is displayed")
     public boolean isWhatsHotTabDisplayed() {
-        return whatIsHotTab.isDisplayed();
+        return whatIsHotSection.isDisplayed();
     }
 
     @Step("Click on 'What’s hot!?' tab")
     public void clickWhatsHotTab() {
-        waitForClickable(whatIsHotTab);
-        whatIsHotTab.click();
+        waitForElementClickable(whatIsHotSection);
+        click(whatIsHotSection);
     }
 
     @Step("Get the list of slick slides")
@@ -111,8 +123,7 @@ public class HomePage extends AbstractPage {
 
     @Step("Wait for the slide to change")
     public void waitForSlideChange(String previousSlideText, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(slickSlider, previousSlideText)));
+        waitForTextPresentInElement(slickSlider, previousSlideText, timeoutInSeconds);
     }
 
     @Step("Get the text of the current slide")
@@ -130,15 +141,28 @@ public class HomePage extends AbstractPage {
         return slickSlider.isDisplayed();
     }
 
-    @Step("Check if 'How Lumi can help you' tab is displayed")
-    public boolean isHowToHelpTabDisplayed() {
-        return howToHelpTab.isDisplayed();
-    }
-
     @Step("Click on 'How Lumi can help you' tab")
     public void clickHowToHelpTab() {
-        waitForClickable(howToHelpTab);
-        howToHelpTab.click();
+        waitForElementClickable(whyLumiTab);
+        click(whyLumiTab);
+    }
+
+    @Step("Check if 'How Lumi can help you' tab is displayed")
+    public boolean isHowToHelpTabDisplayed() {
+        return whyLumiTab.isDisplayed();
+    }
+
+    @Step("Verify the 'How Lumi can help you' section is displayed")
+    public HomePage isHowToHelpSectionDisplayed() {
+        String actualMsg = waitForElement(whyLumiSection).getText().trim();
+        Assert.assertEquals(actualMsg, HOW_LUMI_HELP_YOU_TAB);
+        return this;
+    }
+
+    @Step("Click on 'Speedy bookings' tab")
+    public void clickSpeedyBookingsTab() {
+        waitForElementClickable(speedyBookingsTab);
+        click(speedyBookingsTab);
     }
 
     @Step("Check if 'Speedy bookings' tab is displayed")
@@ -146,10 +170,17 @@ public class HomePage extends AbstractPage {
         return speedyBookingsTab.isDisplayed();
     }
 
-    @Step("Click on 'Speedy bookings' tab")
-    public void clickSpeedyBookingsTab() {
-        waitForClickable(speedyBookingsTab);
-        speedyBookingsTab.click();
+    @Step("Verify the 'Speedy bookings' section is displayed")
+    public HomePage isSpeedyBookingsSectionDisplayed() {
+        String actualMsg = waitForElement(speedyBookingsSection).getText().trim();
+        Assert.assertEquals(actualMsg, SPEEDY_BOOKINGS_TAB);
+        return this;
+    }
+
+    @Step("Click on 'Locations' tab")
+    public void clickLocationsTab() {
+        waitForElementClickable(locationsTab);
+        click(locationsTab);
     }
 
     @Step("Check if 'Locations' tab is displayed")
@@ -157,10 +188,17 @@ public class HomePage extends AbstractPage {
         return locationsTab.isDisplayed();
     }
 
-    @Step("Click on 'Locations' tab")
-    public void clickLocationsTab() {
-        waitForClickable(locationsTab);
-        locationsTab.click();
+    @Step("Verify the 'Locations' section is displayed")
+    public HomePage isLocationsSectionDisplayed() {
+        String actualMsg = waitForElement(locationsSection).getText().trim();
+        Assert.assertEquals(actualMsg, LOCATIONS_TAB);
+        return this;
+    }
+
+    @Step("Click on 'Our app' tab")
+    public void clickOurAppTab() {
+        waitForElementClickable(ourAppTab);
+        click(ourAppTab);
     }
 
     @Step("Check if 'Our app' tab is displayed")
@@ -168,10 +206,11 @@ public class HomePage extends AbstractPage {
         return ourAppTab.isDisplayed();
     }
 
-    @Step("Click on 'Our app' tab")
-    public void clickOurAppTab() {
-        waitForClickable(ourAppTab);
-        ourAppTab.click();
+    @Step("Verify the 'Our app' section is displayed")
+    public HomePage isOurAppSectionDisplayed() {
+        String actualMsg = waitForElement(ourAppSection).getText().trim();
+        Assert.assertEquals(actualMsg, OUR_APP_TAB);
+        return this;
     }
 
 }

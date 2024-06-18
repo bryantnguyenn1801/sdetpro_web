@@ -2,32 +2,31 @@ package tests;
 
 import base.AbstractWebTest;
 import org.junit.Test;
-import pagefactory.PageFactoryManager;
 import pagesobject.features.HomePage;
 import pagesobject.features.SignUpPage;
-import utils.CommonUtils;
+
+import static constants.RegisterConstants.*;
 
 public class SignUpTest extends AbstractWebTest {
     @Test
     public void signUp_successfully() {
-        HomePage homePage = PageFactoryManager.initElements(driver, HomePage.class);
+        HomePage homePage = new HomePage(driver);
         homePage.open()
                 .clickLoginButton();
-        SignUpPage signUpPage = PageFactoryManager.initElements(driver, SignUpPage.class);
+        SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.isSignUpPageDisplayed()
-                .inputMobileNo("58" +CommonUtils.getRandomSevenNumbersString())
+                .inputMobileNo(PHONE_NUMBER)
                 .clickProceedBtn()
                 .isOTPPageDisplayed()
-                .inputPinCode("9", "9", "9", "9", "9", "9")
+                .inputPinCode(PIN_NUMBER)
                 .clickProceedButtonOTP()
                 .isPasswordPageDisplayed()
-                .inputPassword("Binh741456")
+                .inputPassword(PASSWORD)
                 .clickProceed()
                 .isDetailsPageDisplayed()
-                .inputFirstName("Cody")
-                .inputLastName("Testing")
+                .inputFirstName(FIRST_NAME)
+                .inputLastName(LAST_NAME)
                 .clickProceed()
                 .isSignUpSuccessful();
-
     }
 }

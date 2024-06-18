@@ -8,7 +8,6 @@ This project contains automated tests for the Lumirental web application using S
 
 * JDK 11 or higher installed
 * Maven 3.6.x or higher installed
-* Chrome browser installed
 
 ### Dependencies
 
@@ -23,7 +22,7 @@ This project contains automated tests for the Lumirental web application using S
 ### Setting Up the Project
 
 1. #### Clone the repository:
-`git clone https://github.com/your/repository.git`
+`git clone https://github.com/bryantnguyenn1801/sdetpro_web.git`
 
 `cd lumirental-automation`
 
@@ -35,17 +34,17 @@ This project uses Maven for dependency management. Run the following command to 
 To run the automated tests, execute the following Maven command: `mvn test`
 This will trigger the execution of all test classes ending with Test.java under the src/test/java directory.
 
+To run a specific test class: `mvn -Dtest=SignUpTest test`
+
+
+
 ### Project Structure
-* **src/main/java:** Contains main Java source files (not shown in this example, typically for application code).
+* **src/main/java:** Contains main Java source files.
 
 * **src/test/java:** Contains test automation code.
   * **tests:** Package for test classes
 * **pom.xml:** Maven configuration file specifying project dependencies and build settings.
 
-### Notes
-
-Ensure ChromeDriver is available at `user_dir/downloadFile/chromedriver` as specified in **WebAppDriverManager**.
-Adjust paths and configurations as per your local environment setup.
 
 ## Contributors
 Bryant Nguyen

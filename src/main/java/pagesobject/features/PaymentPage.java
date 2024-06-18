@@ -1,12 +1,14 @@
 package pagesobject.features;
 
-//import com.epam.reportportal.annotations.Step;
 import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import pagesobject.base.AbstractPage;
 
+import static constants.strings.Messages.PAYMENT_PAGE_NOT_SHOWED;
+import static constants.strings.Messages.PAY_NOW_NOT_SELECTED;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -34,6 +36,8 @@ public class PaymentPage extends AbstractPage {
 
     public PaymentPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
+
     }
 
     @Step("Get driver details title")
@@ -43,13 +47,13 @@ public class PaymentPage extends AbstractPage {
 
     @Step("Verify driver details title")
     public PaymentPage isPaymentTitleCorrect(String title) {
-        assertEquals(getPaymentTitle(), title, "Payment page not displayed correctly.");
+        assertEquals(PAYMENT_PAGE_NOT_SHOWED, title, getPaymentTitle());
         return this;
     }
 
     @Step("Verify Pay Now Button")
     public PaymentPage isPayNowSelected() {
-        assertTrue("Payment page not displayed correctly.", payNowPriceRadioBtn.isSelected());
+        assertTrue(PAY_NOW_NOT_SELECTED, payNowPriceRadioBtn.isSelected());
         return this;
     }
 
